@@ -24,7 +24,7 @@ def search_openalex(query: str, num_results: int = 4) -> str:
     response = requests.get(base_url, params={"q": query, "rows": num_results})
     return response.json()
 
-def web_search(query: str, database: str, num_results: int = 4) -> str:
+def web_search(query: str, database: str = "arxiv", num_results: int = 4) -> str:
     print(f"Searching {database} with query {query}...")
     if database == "arxiv":
         return search_arxiv(query, num_results)
